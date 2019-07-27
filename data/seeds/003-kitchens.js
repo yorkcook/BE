@@ -1,9 +1,7 @@
 
 exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('kitchens').del()
+  return knex('kitchens').truncate()
     .then(function () {
-      // Inserts seed entries
       return knex('kitchens').insert([
         {kit_name: "Saint Antony's", city: "San Francisco", website: "https://www.stanthonysf.org/", mission: "St. Anthony’s mission is to feed, heal, shelter, clothe, lift the spirits of those in need, and create a society in which all persons flourish. This mission is guided by five values: healing, community, personalism, justice, and gratitude."},
         {kit_name: "GLIDE", city: "San Francisco", website: "https://www.glide.org/", mission: "GLIDE's mission is to create a radically inclusive, just and loving community mobilized to alleviate suffering and break the cycles of poverty and marginalization. Our Core Values emerge from GLIDE as a spiritual movement. They are rooted in empowerment, recovery and personal transformation. Our values inspire and guide our behaviors. They are the ground we stand on. "},

@@ -48,7 +48,7 @@ exports.up = function(knex) {
         .references("id")
         .inTable("units")
         .onDelete("RESTRICT")
-        .onUpdate("CASThe Rescue Mission is a space where anyone can walk in, sit-down, be encouraged, receive a hot meal and have people available to listen, and connect them to greater resources.CADE");
+        .onUpdate("CASCADE");
       tbl
         .integer("cat_id")
         .unsigned()
