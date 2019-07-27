@@ -24,6 +24,23 @@ exports.up = function(knex) {
       tbl.string("website", 128).unique();
       tbl.string("mission");
     })
+    .createTable("users", tbl => {
+      tbl.increments();
+      tbl.string("username", 128).notNullable().unique()
+      tbl
+        .string("email", 128)
+        .notNullable()
+        .unique();
+      tbl.string("password").notNullable();
+      tbl
+        .integer("kit_id")
+        .unsigned()
+        .notNullable()
+        .references("id")
+        .inTable("kitchens")
+        .onDelete("RESTRICT")
+        .onUpdate("CASCADE");
+    })
     .createTable("items", tbl => {
       tbl.increments();
       tbl
@@ -57,24 +74,15 @@ exports.up = function(knex) {
         .inTable("categories")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
+      tbl.integer("user_id")
+      .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("users")
+      .onDelete("RESTRICT")
+      .onUpdate("CASCADE");
     })
-    .createTable("users", tbl => {
-      tbl.increments();
-      tbl.string("username", 128).notNullable().unique()
-      tbl
-        .string("email", 128)
-        .notNullable()
-        .unique();
-      tbl.string("password").notNullable();
-      tbl
-        .integer("kit_id")
-        .unsigned()
-        .notNullable()
-        .references("id")
-        .inTable("kitchens")
-        .onDelete("RESTRICT")
-        .onUpdate("CASCADE");
-    });
+    
 };
 
 exports.down = function(knex) {

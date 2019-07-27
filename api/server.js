@@ -15,7 +15,7 @@ server.use(cors())
 
 server.use("/api/users", UserRouter)
 server.use("/api/auth", AuthRouter)
-// server.use("/api/inventory", InvRouter)
+server.use("/api/inventory", InvRouter)
 
 server.get("/", (req, res)=> {
     res.send("Server Running")
