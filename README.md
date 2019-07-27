@@ -9,7 +9,7 @@ POST api/auth/register
       "kit_id": 4     //working on this
     }
     
-  Returns  object:
+  Returns single object:
     {
       "id": 4,
       "username": "user4",
@@ -23,16 +23,26 @@ POST api/auth/register
     
 
 POST api/auth/login:
-  Expects requet body:
+  Expects request body:
     {
     "username": "user1",
     "password":"1234"
     }
     
-  Returns object:
+  Returns single object:
     {
       "message": "Welcome user1",
       "token": "token"
     }
 
-
+GET /api/inventory:
+  Returns array of objects. Each object:  
+  {
+    "Name": "popcorn",
+    "Quantity": 10,
+    "Unit": "packages",
+    "Price": 1000,  //in cents
+    "Alert": 0,     //alert when quantity reaches this amount
+    "Category": "dry",
+    "Kitchen": "Saint Antony's"
+  }
