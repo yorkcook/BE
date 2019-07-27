@@ -1,5 +1,5 @@
 {
-  "name": "FrontEnd",
+  "name": "BE",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/serve-soup/FrontEnd.git"
+    "url": "git+https://github.com/serve-soup/BE.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/serve-soup/FrontEnd/issues"
+    "url": "https://github.com/serve-soup/BE/issues"
   },
-  "homepage": "https://github.com/serve-soup/FrontEnd#readme",
+  "homepage": "https://github.com/serve-soup/BE#readme",
   "devDependencies": {
     "cross-env": "^5.2.0",
     "jest": "^24.8.0",

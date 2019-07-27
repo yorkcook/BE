@@ -12,7 +12,8 @@ exports.seed = function(knex) {
           price: 1000,
           alert_when: 0,
           kit_id: 1,
-          cat_id: 7
+          cat_id: 7,
+          user_id:1
         },
         {
           item_name: "black beans",
@@ -21,7 +22,8 @@ exports.seed = function(knex) {
           price: 1500,
           alert_when: 10,
           kit_id: 1,
-          cat_id: 8
+          cat_id: 8,
+          user_id:1
         },
         {
           item_name: "Apple Jax",
@@ -30,7 +32,8 @@ exports.seed = function(knex) {
           price: 350,
           alert_when: 3,
           kit_id: 1,
-          cat_id: 7
+          cat_id: 7,
+          user_id:1
         },
         {
           item_name: "Milk",
@@ -39,7 +42,8 @@ exports.seed = function(knex) {
           price: 599,
           alert_when: 5,
           kit_id: 1,
-          cat_id: 2
+          cat_id: 2,
+          user_id:1
         },
         {
           item_name: "half&half",
@@ -48,7 +52,8 @@ exports.seed = function(knex) {
           price: 499,
           alert_when: 2,
           kit_id: 1,
-          cat_id: 2
+          cat_id: 2,
+          user_id:1
         },
         {
           item_name: "rice",
@@ -57,7 +62,8 @@ exports.seed = function(knex) {
           price: 2000,
           alert_when: 5,
           kit_id: 1,
-          cat_id: 7
+          cat_id: 7,
+          user_id:1
         },
         {
           item_name: "apples",
@@ -66,7 +72,8 @@ exports.seed = function(knex) {
           price: 1000,
           alert_when: 2,
           kit_id: 1,
-          cat_id: 1
+          cat_id: 1,
+          user_id:1
         },
         {
           item_name: "pancake mix",
@@ -75,7 +82,8 @@ exports.seed = function(knex) {
           price: 1700,
           alert_when: 1,
           kit_id: 1,
-          cat_id: 7
+          cat_id: 7,
+          user_id:1
         },
         {
           item_name: "basil",
@@ -84,7 +92,8 @@ exports.seed = function(knex) {
           price: 500,
           alert_when: 1,
           kit_id: 1,
-          cat_id: 4
+          cat_id: 4,
+          user_id:1
         }
       ]);
     });
