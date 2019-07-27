@@ -8,6 +8,8 @@ module.exports = {
   findUserWithKitchen,
   findUserBy
 };
+
+
 async function findList(user_id){
   const itemList = await db("items as i").where({"i.user_id":user_id})
   .join("categories as c", "c.id", "i.cat_id")

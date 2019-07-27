@@ -6,23 +6,7 @@ module.exports = {
   findList
 };
 
-async function findList(user_id){
-    const itemList = await db("items as i").where({"i.user_id":user_id}).first()
-    .join("categories as c", "c.id", "i.cat_id")
-    .join("units as u", "u.id", "i.unit_id")
-    .join("kitchens as k", "k.id", "i.kit_id")
-    .select(
-      "i.item_name as Name",
-      "i.quantity as Quantity",
-      "u.unit_name as Unit",
-      "c.cat_name as Category",
-    );
-  if (itemList) {
-    return itemList;
-  } else {
-    return null;
-  }
-}
+
 
 async function findAll() {
   const items = await db("items as i")
