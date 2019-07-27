@@ -1,6 +1,7 @@
 I'll Serve Soup Backend
 
 POST api/auth/register 
+
   Expects request body: 
     {
       "username": "user1",
@@ -20,9 +21,10 @@ POST api/auth/register
         "Website": "http://www.martindeporres.org/"
       }
     }
-    
+  
 
 POST api/auth/login:
+
   Expects request body:
     {
     "username": "user1",
@@ -35,7 +37,9 @@ POST api/auth/login:
       "token": "token"
     }
 
+
 GET /api/inventory:
+
   Returns array of objects. Each object:  
   {
     "Name": "popcorn",
