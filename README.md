@@ -40,7 +40,7 @@ POST api/auth/login:
 
 GET /api/inventory:
 
-  Returns array of objects. Each object:  
+  Returns full inventory in array of objects. Each object:  
   {
     "Name": "popcorn",
     "Quantity": 10,
@@ -50,3 +50,31 @@ GET /api/inventory:
     "Category": "dry",
     "Kitchen": "Saint Antony's"
   }
+  
+GET /api/inventory/:id
+  Returns single inventory item as object: 
+    {
+    "Name": "popcorn",
+    "Quantity": 10,
+    "Unit": "packages",
+    "Price": 1000,  //in cents
+    "Alert": 0,     //alert when quantity reaches this amount
+    "Category": "dry",
+    "Kitchen": "Saint Antony's"
+  }
+  
+GET /api/users/:id/inventory
+  Returns inventory list by user id as array of objects: 
+  [
+  {
+    "Name": "popcorn",
+    "Quantity": 10,
+    "Unit": "packages",
+    "Category": "dry"
+  },
+  {
+    "Name": "black beans",
+    "Quantity": 30,
+    "Unit": "cans",
+    "Category": "canned&jarred"
+  }]
