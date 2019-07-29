@@ -7,7 +7,7 @@ POST api/auth/register
       "username": "user1",
       "email":"email1@email.com",
       "password": "1234",
-      "kit_id": 4     //working on this
+      "kit_id": 4
     }
     
   Returns single object:
@@ -21,9 +21,8 @@ POST api/auth/register
         "Website": "http://www.martindeporres.org/"
       }
     }
-  
 
-POST api/auth/login:
+POST api/auth/login
 
   Expects request body:
     {
@@ -37,33 +36,27 @@ POST api/auth/login:
       "token": "token"
     }
 
+=======================
+GET /api/users/:id
 
-GET /api/inventory:
+Returns single user object:{
+  "id": 1,
+  "username": "user1",
+  "email": "email1@11email.com"
+}
 
-  Returns full inventory in array of objects. Each object:  
-  {
-    "Name": "popcorn",
-    "Quantity": 10,
-    "Unit": "packages",
-    "Price": 1000,  //in cents
-    "Alert": 0,     //alert when quantity reaches this amount
-    "Category": "dry",
-    "Kitchen": "Saint Antony's"
-  }
-  
-GET /api/inventory/:id
-  Returns single inventory item as object: 
-    {
-    "Name": "popcorn",
-    "Quantity": 10,
-    "Unit": "packages",
-    "Price": 1000,  //in cents
-    "Alert": 0,     //alert when quantity reaches this amount
-    "Category": "dry",
-    "Kitchen": "Saint Antony's"
-  }
-  
+PUT /api/users/:id 
+
+Expects object with changes to be updated. 
+
+Returns messages: "Update successful" or "User not found"
+
+DELETE /api/users/:id
+
+Returns status 204 if successful, or meessage, "User not found to delete" if unsuccessful. 
+
 GET /api/users/:id/inventory
+  
   Returns inventory list by user id as array of objects: 
   [
   {
@@ -78,3 +71,38 @@ GET /api/users/:id/inventory
     "Unit": "cans",
     "Category": "canned&jarred"
   }]
+  
+  ========================
+  GET /api/inventory
+  Returns full inventory in array of objects. Each object:  
+  {
+    "Name": "popcorn",
+    "Quantity": 10,
+    "Unit": "packages",
+    "Price": 1000,  //in cents
+    "Alert": 0,     //alert when quantity reaches this amount
+    "Category": "dry",
+    "Kitchen": "Saint Antony's"
+  }
+
+GET /api/inventory/:id 
+
+Returns single inventory item as object: { "Name": "popcorn", "Quantity": 10, "Unit": "packages", "Price": 1000, //in cents "Alert": 0, //alert when quantity reaches this amount "Category": "dry", "Kitchen": "Saint Antony's" }
+
+GET/api/inventory/kitchen/:id
+AND
+GET/api/inventory/user/:id
+
+Returns inventory list by kitchen (for kitchen/:id) or User (for user/:id). Returns an array of objects. Each Object: 
+  {
+    "item_name": "popcorn",
+    "quantity": 10,
+    "unit_name": "packages",
+    "price": 1000,
+    "alert_when": 0,
+    "cat_name": "dry"
+  },
+
+
+  
+
