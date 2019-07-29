@@ -1,4 +1,7 @@
+const jwt= require("jsonwebtoken")
+
 const secret = require("../data/secrets");
+
 module.exports = { authenticate };
 
 

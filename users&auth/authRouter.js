@@ -4,10 +4,11 @@ const jwt = require("jsonwebtoken");
 const secret = require("../data/secrets");
 
 const Users = require("./usersModel");
+const {authenticate} = require("./authenticate")
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
     const users = await Users.findUsers();
     if (users) {
@@ -25,7 +26,6 @@ router.post("/register", async (req, res) => {
   const user = req.body;
   const hash = bcrypt.hashSync(user.password, 8);
   user.password = hash;
-
   try {
     const registered = await Users.add(user);
     if (registered) {
