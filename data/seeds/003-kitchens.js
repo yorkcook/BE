@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-  return knex('kitchens').truncate()
+  return knex('kitchens').delete()
     .then(function () {
       return knex('kitchens').insert([
         {kit_name: "Saint Antony's", city: "San Francisco", website: "https://www.stanthonysf.org/", mission: "St. Anthony’s mission is to feed, heal, shelter, clothe, lift the spirits of those in need, and create a society in which all persons flourish. This mission is guided by five values: healing, community, personalism, justice, and gratitude."},

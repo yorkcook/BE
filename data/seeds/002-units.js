@@ -1,5 +1,5 @@
 exports.seed = function(knex) {
-  return knex('units').truncate()
+  return knex('units').delete()
     .then(function () {
       return knex('units').insert([
         {unit_name: "pounds", },
