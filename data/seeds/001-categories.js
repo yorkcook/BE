@@ -1,6 +1,6 @@
 exports.seed = function(knex) {
   return knex("categories")
-    .truncate()
+    .delete()
     .then(function() {
       return knex("categories").insert([
         { cat_name: "produce" },
