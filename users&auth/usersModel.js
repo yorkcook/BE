@@ -5,6 +5,7 @@ module.exports = {
   remove,
   update,
   findUsers,
+  findList,
   findUserById,
   findUserWithKitchen,
   findUserBy
@@ -35,10 +36,10 @@ async function findList(user_id) {
     .join("units as u", "u.id", "i.unit_id")
     .join("kitchens as k", "k.id", "i.kit_id")
     .select(
-      "i.item_name as Name",
-      "i.quantity as Quantity",
-      "u.unit_name as Unit",
-      "c.cat_name as Category"
+      "i.item_name as item_name",
+      "i.quantity as quantity",
+      "u.unit_name as unit_name",
+      "c.cat_name as cat_name"
     );
   if (itemList) {
     return itemList;
@@ -85,7 +86,7 @@ async function findUserWithKitchen(id) {
     .where({ "u.id": id })
     .first()
     .join("kitchens as k", "k.id", "u.kit_id")
-    .select("k.kit_name as Name", "k.city as Location", "k.website as Website");
+    .select("k.kit_name as kit_name", "k.city as city", "k.website as website");
 
   if (user && kitchen) {
     return { ...user, kitchen };
