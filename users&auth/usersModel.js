@@ -16,8 +16,9 @@ async function add(user) {
 
    return db("users")
     .insert(user)
-    .then(ids => {
-     return findUserWithKitchen(ids[0]);
+    .then(async (ids)=> {
+     const user = await findUserWithKitchen(ids[0]);
+     return user
     });
   } catch(err){
     console.log(err)
