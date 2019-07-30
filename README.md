@@ -1,6 +1,6 @@
-#I'll Serve Soup Backend
+# I'll Serve Soup Backend
 
-##POST api/auth/register
+## POST api/auth/register
 
 Expects request body:
 
@@ -28,7 +28,7 @@ Returns single object:
 }
 ```
 
-##POST api/auth/login
+## POST api/auth/login
 
 Expects request body:
 
@@ -48,7 +48,7 @@ Returns single object:
 }
 ```
 
-##GET /api/users/:id
+## GET /api/users/:id
 
 Returns single user object:
 
@@ -60,17 +60,17 @@ Returns single user object:
 }
 ```
 
-##PUT /api/users/:id
+## PUT /api/users/:id
 
 Expects object with changes to be updated.
 
 Returns messages: "Update successful" or "User not found"
 
-##DELETE /api/users/:id
+## DELETE /api/users/:id
 
 Returns status 204 if successful, or meessage, "User not found to delete" if unsuccessful.
 
-##GET /api/users/:id/inventory
+## GET /api/users/:id/inventory
 
 Returns inventory list by user id as array of objects:
 
@@ -91,7 +91,7 @@ Returns inventory list by user id as array of objects:
 ]  
 ```
 
-##GET /api/inventory
+## GET /api/inventory
 Returns full inventory in array of objects. Each object:
 
 ```
@@ -121,7 +121,7 @@ Returns full inventory in array of objects. Each object:
  ]
 ```
 
-##POST /api/inventory
+## POST /api/inventory
 
 Expects object: 
 ```
@@ -151,7 +151,7 @@ Returns object:
 }
 ```
 
-##GET /api/inventory/:id
+## GET /api/inventory/:id
 
 Returns single inventory item as object:
 ```
@@ -168,10 +168,10 @@ Returns single inventory item as object:
 }
 ```
 
-##DELETE  /api/inventory/:id
+## DELETE  /api/inventory/:id
 Returns message "Item deleted" or "Item not found to delete"
 
-##PUT  /api/inventory/:id
+## PUT  /api/inventory/:id
 
 Expects Object: 
 ```
@@ -188,7 +188,7 @@ Expects Object:
 
 Returns message "Update successful" or "Item not found"
 
-##GET/api/inventory/kitchen/:id
+## GET/api/inventory/kitchen/:id
 
 Returns inventory list by kitchen. Returns an array of objects. Each Object:
 ```
@@ -215,7 +215,7 @@ Returns inventory list by kitchen. Returns an array of objects. Each Object:
   }
 ]
 ```  
-##GET /kitchens
+## GET /kitchens
 Returns array of Objects:
 
 ```
@@ -237,7 +237,7 @@ Returns array of Objects:
 ]
 ```  
 
-##POST /kitchens
+## POST /kitchens
 
 expects object: 
 ```
@@ -261,7 +261,7 @@ Returns object:
 }
 ```
 
-##GET /kitchens/:id
+## GET /kitchens/:id
 
 Returns object:
 ```
@@ -275,7 +275,7 @@ Returns object:
 
 ```
 
-##PUT /kitchens/:id
+## PUT /kitchens/:id
 
 Expects object:
 ```
