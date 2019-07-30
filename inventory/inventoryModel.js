@@ -22,7 +22,7 @@ async function findAll() {
       "u.unit_name as unit",
       "i.price as price",
       "i.alert_when as alert_when",
-      "c.cat_name as cat_namey",
+      "c.cat_name as cat_name",
       "k.kit_name as kit_name",
       "users.username as username"
     );
