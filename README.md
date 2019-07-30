@@ -103,7 +103,7 @@ Returns full inventory in array of objects. Each object:
     "unit": "pounds",
     "price": 1000,
     "alert_when": 0,
-    "cat_namey": "meat&poultry",
+    "cat_name": "meat&poultry",
     "kit_name": "Saint Antony's",
     "username": "user1"
   },
@@ -114,7 +114,7 @@ Returns full inventory in array of objects. Each object:
     "unit": "cans",
     "price": 1500,
     "alert_when": 10,
-    "cat_namey": "canned&jarred",
+    "cat_name": "canned&jarred",
     "kit_name": "Saint Antony's",
     "username": "user1"
   }

@@ -12,11 +12,16 @@ module.exports = {
 };
 
 async function add(user) {
-  return db("users")
+  try{
+
+   return db("users")
     .insert(user)
     .then(ids => {
-      return findUserWithKitchen(ids[0]);
+     return findUserWithKitchen(ids[0]);
     });
+  } catch(err){
+    console.log(err)
+  }
 }
 
 async function update(id, changes) {
