@@ -224,15 +224,13 @@ Returns array of Objects:
     "id": 1,
     "kit_name": "Saint Antony's",
     "city": "San Francisco",
-    "website": "https://www.stanthonysf.org/",
-    "mission": "St. Anthony’s mission is to feed, heal, shelter, clothe, lift the spirits of those in need, and create a society in which all persons flourish. This mission is guided by five values: healing, community, personalism, justice, and gratitude."
+    "website": "https://www.stanthonysf.org/"
   },
   {
     "id": 2,
     "kit_name": "GLIDE",
     "city": "San Francisco",
-    "website": "https://www.glide.org/",
-    "mission": "GLIDE's mission is to create a radically inclusive, just and loving community mobilized to alleviate suffering and break the cycles of poverty and marginalization. Our Core Values emerge from GLIDE as a spiritual movement. They are rooted in empowerment, recovery and personal transformation. Our values inspire and guide our behaviors. They are the ground we stand on. "
+    "website": "https://www.glide.org/"
   }
 ]
 ```  
@@ -244,8 +242,7 @@ expects object:
 {
 "kit_name": "Kitchen Name",
   "city": "San Francisco",
-  "website": "https://www.soup-kitchen.org/",
-  "mission": "This is a fake soup kitchen"
+  "website": "https://www.soup-kitchen.org/"
 }
 ```
 
@@ -256,8 +253,7 @@ Returns object:
   "id": 7,
   "kit_name": "Kitchen Name",
   "city": "San Francisco",
-  "website": "https://www.soup-kitchen.org/",
-  "mission": "This is a fake soup kitchen"
+  "website": "https://www.soup-kitchen.org/"
 }
 ```
 
@@ -269,8 +265,7 @@ Returns object:
   "id": 7,
   "kit_name": "Kitchen Name",
   "city": "San Francisco",
-  "website": "https://www.soup-kitchen.org/",
-  "mission": "This is a fake soup kitchen"
+  "website": "https://www.soup-kitchen.org/"
 }
 
 ```
@@ -282,8 +277,7 @@ Expects object:
 {
   "kit_name": "Soup Kitchen Name",
   "city": "San Francisco",
-  "website": "https://www.soup-kitchen.org/",
-  "mission": "This is a fake soup kitchen"
+  "website": "https://www.soup-kitchen.org/"
 }
 ```
 

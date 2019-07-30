@@ -22,7 +22,6 @@ exports.up = function(knex) {
         .unique();
       tbl.string("city", 128).notNullable();
       tbl.string("website", 128).unique();
-      tbl.string("mission");
     })
     .createTable("users", tbl => {
       tbl.increments();
