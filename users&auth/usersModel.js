@@ -14,17 +14,18 @@ module.exports = {
 async function add(user) {
   try{
 
-   const added= await db("users")
+  //  const added= await 
+    db("users")
     .insert(user)
-    // .then(async (ids)=> {
-    //  const user = await findUserWithKitchen(ids[0]);
-    //  return user
-    // });
-    if(added) {
-      return true
-    } else {
-      return false
-    }
+    .then(async (ids)=> {
+     const user = await findUserWithKitchen(ids[0]);
+     return user
+    });
+    // if(added) {
+    //   return true
+    // } else {
+    //   return false
+    // }
   } catch(err){
     console.log(err)
   }
