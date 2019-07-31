@@ -18,6 +18,7 @@ async function add(user) {
     db("users")
     .insert(user)
     .then(async (ids)=> {
+      console.log(ids)
      const user = await findUserWithKitchen(ids[0]);
      return user
     });
