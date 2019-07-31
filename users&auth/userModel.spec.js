@@ -8,7 +8,8 @@ describe("Users model", ()=> {
     })
     describe("findUserWithKitchen(id)", ()=>{
         it("shoud return json object", async ()=>{
-            const user = await Users.findUserById
+            const user = await Users.findUserById(1)
+            expect(user).toHaveLength(1)
         })
     })
 })

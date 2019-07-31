@@ -74,9 +74,9 @@ async function findUserBy(filter) {
 }
 
 async function findUserById(id) {
-  const user = await db("users as u")
+  const user = await db('users as u')
     .where({ "u.id": id }).first()
-    .join("kitchens as k", "k.id", "u.kit_id")
+    .join("kitchens as k", 'k.id', 'u.kit_id')
     .select("u.id", "u.username", "u.email");
   return user;
 }
@@ -88,11 +88,11 @@ async function findUserWithKitchen(id) {
     .join("kitchens", "kitchens.id", "users.kit_id")
     .select("users.id", "users.username", "users.email");
 
-  const kitchen = await db("users")
-    .where({ "users.id": id })
+  const kitchen = await db('users')
+    .where({ 'users.id': id })
     // .first()
-    .join("kitchens", "kitchens.id", "users.kit_id")
-    .select("kitchens.kit_name", "kitchens.city", "kitchens.website");
+    .join('kitchens', 'kitchens.id', 'users.kit_id')
+    .select('kitchens.kit_name', 'kitchens.city', 'kitchens.website');
     // .select("kitchens.kit_name as kit_name", "kitchens.city as city", "kitchens.website as website");
 
   if (user && kitchen) {
