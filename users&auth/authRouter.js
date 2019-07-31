@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
   try {
     await Users.add(user);
     if (registered) {
-      res.status(201).json(message: "User added");
+      res.status(201).json({message: "User added"});
     } else {
       res.status(400).json({ message: "Invalid credentials" });
     }
