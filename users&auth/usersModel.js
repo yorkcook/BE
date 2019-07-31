@@ -91,7 +91,7 @@ async function findUserWithKitchen(user_id) {
     .where({ "users.id": user_id })
     // .first()
     .join("kitchens", "kitchens.id", "users.kit_id")
-    .select("id", "username", "email");
+    .select("users.id", "users.username", "users.email");
 
   const kitchen = await db('users')
     .where({ 'users.id': user_id })
