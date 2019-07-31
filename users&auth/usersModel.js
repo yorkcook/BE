@@ -16,10 +16,10 @@ async function add(user) {
 
    return db("users")
     .insert(user)
-    .then(async (ids)=> {
-     const user = await findUserWithKitchen(ids[0]);
-     return user
-    });
+    // .then(async (ids)=> {
+    //  const user = await findUserWithKitchen(ids[0]);
+    //  return user
+    // });
   } catch(err){
     console.log(err)
   }
