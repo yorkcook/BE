@@ -7,8 +7,8 @@ describe("Users model", ()=> {
         await db("users").truncate()
     })
     describe("findUserWithKitchen(id)", ()=>{
-        it("shoud  return 200 status and json", async ()=>{
-            
+        it("shoud return json object", async ()=>{
+            const user = await Users.findUserById
         })
     })
 })
