@@ -83,11 +83,18 @@ async function findListByKitchen(kit_id) {
 }
 
 async function add(item) {
-  return db("items")
+  try{
+    const added = await db("items")
     .insert(item)
-    .then(ids => {
-      return findById(ids[0]);
-    });
+    if(added) {
+      return true
+    } else {
+      return null
+    }
+  }catch(err){
+    console.log(err)
+    return null
+  }
 }
 
 async function update(id, changes) {

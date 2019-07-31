@@ -18,10 +18,11 @@ async function add(user) {
     if(added) {
       return true
     } else {
-      return false
+      return null
     }
   } catch(err){
     console.log(err)
+    return null
   }
 }
 

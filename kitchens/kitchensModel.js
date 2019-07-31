@@ -28,11 +28,18 @@ async function findById(id) {
 }
 
 async function add(kitchen) {
-  return db("kitchens")
+  try{
+   const added = db("kitchens")
     .insert(kitchen)
-    .then(ids => {
-      return findById(ids[0]);
-    });
+    if(added) {
+      return true
+    } else {
+      return null
+    }
+  }catch(err){
+    console.log(err)
+    return null
+  }
 }
 
 async function update(id, changes) {

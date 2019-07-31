@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
   try {
     const added = await Inv.add(item);
     if (added) {
-      res.status(201).json(added);
+      res.status(201).json({message: "Item added"});
     } else {
       res.status(400).json({ message: "Invalid item not added" });
     }

@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
   try {
     const added = await Kits.add(req.body);
     if (added) {
-      res.status(201).json(added);
+      res.status(201).json({message: "Kitchen added"});
     } else {
       res.status(400).json({ message: "Invalid kitchen not added" });
     }
