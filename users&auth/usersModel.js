@@ -15,7 +15,6 @@ async function add(user) {
   try{
    const added= await db("users")
     .insert(user)
-    console.log(added)
     if(added) {
       return true
     } else {
