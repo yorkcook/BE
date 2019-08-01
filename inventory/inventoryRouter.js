@@ -8,8 +8,8 @@ const Inv = require("./inventoryModel");
 const router = express.Router();
 
 router.get("/", authenticate, async (req, res) => {
-  const userId = req.decoded.sub
-  console.log("userID", req.decoded)
+  const userId = req.decoded.subject
+  console.log("userID", req.decoded.subject)
   try {
     const fullInventory = await Inv.findAll(userId);
     if (fullInventory) {
