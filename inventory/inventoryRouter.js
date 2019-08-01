@@ -23,6 +23,8 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const item = req.body;
+  item.user_id = req.user.id
+  items.kit_id = req.kit_id
   try {
     const added = await Inv.add(item);
     if (added) {
@@ -52,8 +54,11 @@ router.get("/:id", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  const item = req.body
+  item.user_id = req.user.id
+  items.kit_id = req.kit_id
   try {
-    const item = await Inv.update(req.params.id, req.body);
+    const item = await Inv.update(req.params.id, item);
     if (item) {
       res.status(200).json({ message: "Update successful" });
     } else {

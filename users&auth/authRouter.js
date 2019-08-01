@@ -57,10 +57,13 @@ console.log(user)
   }
 });
 
+
+
 function generateToken(user) {
   const payload = {
     subject: user.id,
-    username: user.username
+    username: user.username,
+    kitchen: user.kit_id
   };
   const options = {
     expiresIn: "8h"

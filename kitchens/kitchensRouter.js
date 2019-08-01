@@ -47,6 +47,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+
   try {
     const kitchen = await Kits.update(req.params.id, req.body);
     if (kitchen) {

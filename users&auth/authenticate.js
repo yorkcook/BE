@@ -10,7 +10,7 @@ function authenticate(req, res, next) {
   if (token) {
     jwt.verify(token, secret.jwtSecret, (err, decoded) => {
       if (err) {
-        return res.status().json(err);
+        return res.status(500).json({message: "Error verifying password"});
       } else {
         req.decoded = decoded;
         next();
