@@ -56,7 +56,8 @@ router.get("/:id", async (req, res) => {
 
 router.put("/:id", authenticate, async (req, res) => {
   const item = req.body
-  const userId = req.token.id
+  console.log(req.token)
+  const userId = req.token.sub
   const kitId = req.token.kitchen
   try {
     const upItem = await Inv.update(req.params.id, userId, kitId, item);
