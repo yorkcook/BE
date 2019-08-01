@@ -25,7 +25,7 @@ router.get("/", authenticate, async (req, res) => {
 
 router.post("/", authenticate, async (req, res) => {
   const item = req.body
-  const userId = req.decoded.sub
+  const userId = req.decoded.subject
   const kitId = req.decoded.kitchen
   try {
     const added = await Inv.add(userId, kitId, item);
@@ -58,7 +58,7 @@ router.get("/:id", authenticate, async (req, res) => {
 
 router.put("/:id", authenticate, async (req, res) => {
   const item = req.body
-  const userId = req.decoded.sub
+  const userId = req.decoded.subject
   const kitId = req.decoded.kitchen
   try {
     const upItem = await Inv.update(req.params.id, userId, kitId, item);
