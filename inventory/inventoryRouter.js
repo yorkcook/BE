@@ -54,11 +54,13 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", authenticate, async (req, res) => {
   const item = req.body
+  const userId = req.token.id
+  const kitId = req.token.kitchen
   try {
-    const item = await Inv.update(req.params.id, req.user.id, req.user.kit_id, item);
-    if (item) {
+    const upItem = await Inv.update(req.params.id, userId, kitId, item);
+    if (upItem) {
       res.status(200).json({ message: "Update successful" });
     } else {
       res.status(404).json({ message: "Item not found" });
