@@ -67,7 +67,7 @@ async function findUsers() {
 }
 
 async function findUserBy(filter) {
-  console.log("FILTER", filter);
+  // console.log("FILTER", filter);
   const user = await db("users")
     .where(filter)
     .first();
@@ -83,7 +83,7 @@ async function findUserById(id) {
 }
 
 async function findUserWithKitchen(user_id) {
-  console.log(user_id)
+  // console.log(user_id)
   const user = await db("users")
     .where({ "users.id": user_id })
     // .first()

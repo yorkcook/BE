@@ -9,6 +9,7 @@ const router = express.Router();
 
 router.get("/", authenticate, async (req, res) => {
   const userId = req.decoded.sub
+  console.log("userID", userID)
   try {
     const fullInventory = await Inv.findAll(userId);
     if (fullInventory) {

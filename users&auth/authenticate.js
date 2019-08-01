@@ -7,8 +7,7 @@ module.exports = { authenticate };
 
 function authenticate(req, res, next) {
   const token = req.headers.authorization;
-  console.log(token)
-  console.log(req.headers)
+  console.log("TOKEN", token)
   if (token) {
     jwt.verify(token, secret.jwtSecret, (err, decoded) => {
       if (err) {
