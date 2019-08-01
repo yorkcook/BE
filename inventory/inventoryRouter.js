@@ -24,11 +24,11 @@ router.get("/", authenticate, async (req, res) => {
 });
 
 router.post("/", authenticate, async (req, res) => {
-  const item = req.body;
-  item.user_id = req.user.id
-  items.kit_id = req.kit_id
+  const item = req.body
+  const userId = req.decoded.sub
+  const kitId = req.decoded.kitchen
   try {
-    const added = await Inv.add(item);
+    const added = await Inv.add(userId, kitId, item);
     console.log("item", item)
     if (added) {
       res.status(201).json({message: "Item added"});

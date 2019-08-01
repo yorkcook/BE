@@ -84,10 +84,11 @@ async function findListByKitchen(kit_id) {
   }
 }
 
-async function add(item, user_id, kit_id) {
+async function add(userId, kitId, item) {
+  const newItem = {...item, user_id: userId, kit_id: kitId}
   try{
     const added = await db("items")
-    .insert(item)
+    .insert(newItem)
     if(added) {
       return true
     } else {
