@@ -27,6 +27,7 @@ router.post("/", async (req, res) => {
   items.kit_id = req.kit_id
   try {
     const added = await Inv.add(item);
+    console.log("item", item)
     if (added) {
       res.status(201).json({message: "Item added"});
     } else {

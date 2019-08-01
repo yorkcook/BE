@@ -82,7 +82,7 @@ async function findListByKitchen(kit_id) {
   }
 }
 
-async function add(item) {
+async function add(item, user_id, kit_id) {
   try{
     const added = await db("items")
     .insert(item)
@@ -97,10 +97,11 @@ async function add(item) {
   }
 }
 
-async function update(id, changes) {
+async function update(itemId, userId, kitId, changes) {
+  const item = {...changes, user_id: userId, kit_id: kitId}
   return db("items")
-    .where({ id })
-    .update(changes);
+    .where({ itemId })
+    .update(item);
 }
 
 async function remove(id) {
