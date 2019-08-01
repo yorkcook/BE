@@ -4,7 +4,7 @@ const { authenticate } = require("./authenticate");
 const Users = require("./usersModel");
 const router = express.Router();
 
-router.get("/:id/inventory", async (req, res) => {
+router.get("/:id/inventory", authenticate, async (req, res) => {
   const { id } = req.params;
   try {
     const itemList = await Users.findList(id);
@@ -19,7 +19,7 @@ router.get("/:id/inventory", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
   try {
     const user = await Users.findUserById(id);
@@ -34,7 +34,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
   try {
     const user = await Users.update(id, req.body);
@@ -50,7 +50,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authenticate, async (req, res) => {
   try {
     const deleted = await Users.remove(req.params.id);
     console.log(deleted);

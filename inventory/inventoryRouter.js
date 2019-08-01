@@ -7,9 +7,10 @@ const Inv = require("./inventoryModel");
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
+  const userId = req.decoded.sub
   try {
-    const fullInventory = await Inv.findAll();
+    const fullInventory = await Inv.findAll(userId);
     if (fullInventory) {
       res.status(200).json(fullInventory);
     } else {
@@ -21,7 +22,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   const item = req.body;
   item.user_id = req.user.id
   items.kit_id = req.kit_id
@@ -39,7 +40,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
   try {
     const singleItem = await Inv.findById(id);
@@ -56,7 +57,6 @@ router.get("/:id", async (req, res) => {
 
 router.put("/:id", authenticate, async (req, res) => {
   const item = req.body
-  console.log(req.decoded)
   const userId = req.decoded.sub
   const kitId = req.decoded.kitchen
   try {
@@ -72,7 +72,7 @@ router.put("/:id", authenticate, async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authenticate, async (req, res) => {
   try {
     const deleted = await Inv.remove(req.params.id);
     if (deleted) {
@@ -86,7 +86,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.get("/kitchen/:id", async (req, res) => {
+router.get("/kitchen/:id", authenticate, async (req, res) => {
   const kit_id = req.params.id;
   try {
     const invList = await Inv.findListByKitchen(kit_id);
