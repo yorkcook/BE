@@ -15,7 +15,7 @@ async function findAll(user_id) {
     .join("categories as c", "c.id", "i.cat_id")
     .join("units as u", "u.id", "i.unit_id")
     .join("kitchens as k", "k.id", "i.kit_id")
-  .join("users", "i.user_id", "users.id")
+    .join("users", "i.user_id", "users.id")
     .select(
       "i.id as id",
       "i.item_name as item_name",
