@@ -97,10 +97,10 @@ async function add(item, user_id, kit_id) {
   }
 }
 
-async function update(itemId, userId, kitId, changes) {
+async function update(id, userId, kitId, changes) {
   const item = {...changes, user_id: userId, kit_id: kitId}
   return db("items")
-    .where({ itemId })
+    .where({ id })
     .update(item);
 }
 
