@@ -56,10 +56,8 @@ router.get("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const item = req.body
-  item.user_id = req.user.id
-  items.kit_id = req.kit_id
   try {
-    const item = await Inv.update(req.params.id, item);
+    const item = await Inv.update(req.params.id, req.user.id, req.user.kit_id, item);
     if (item) {
       res.status(200).json({ message: "Update successful" });
     } else {
