@@ -4,7 +4,7 @@ const { authenticate } = require("./authenticate");
 const Users = require("./usersModel");
 const router = express.Router();
 
-router.get("/:id/inventory", authenticate, async (req, res) => {
+router.get("/:id/inventory", async (req, res) => {
   const { id } = req.params;
   try {
     const itemList = await Users.findList(id);

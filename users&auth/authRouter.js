@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const secret = require("../data/secrets");
 
 const Users = require("./usersModel");
-const {authenticate} = require("./authenticate")
+const { authenticate } = require("./authenticate");
 
 const router = express.Router();
 
@@ -27,9 +27,9 @@ router.post("/register", async (req, res) => {
   const hash = bcrypt.hashSync(user.password, 8);
   user.password = hash;
   try {
-    const registered =await Users.add(user);
+    const registered = await Users.add(user);
     if (registered) {
-      res.status(201).json({message: "User added"});
+      res.status(201).json({ message: "User added" });
     } else {
       res.status(400).json({ message: "Invalid credentials" });
     }
@@ -40,15 +40,15 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-    const {username, password} = req.body
+  const { username, password } = req.body;
   try {
-    const user = await Users.findUserBy({username});
-console.log("USER", user)
+    const user = await Users.findUserBy({ username });
+    console.log("USER", user);
     if (user && bcrypt.compareSync(password, user.password)) {
       const token = generateToken(user);
       res.status(200).json({ message: `Welcome ${user.username}`, token });
     } else {
-        // console.log("400", user, userData)
+      // console.log("400", user, userData)
       res.status(400).json({ message: "Invalid credentials" });
     }
   } catch (err) {
@@ -56,8 +56,6 @@ console.log("USER", user)
     res.status(500).json({ message: "Server Error" });
   }
 });
-
-
 
 function generateToken(user) {
   const payload = {
